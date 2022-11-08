@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:animated_login/shared/animation_enum.dart';
 import 'package:animated_login/shared/text_form_filed.dart';
+import 'package:animated_login/shared/toast_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rive/rive.dart';
@@ -123,6 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Future.delayed(const Duration(milliseconds: 750), () {
       if (formKey.currentState!.validate()) {
         addSuccessController();
+        showToast(text: 'Login Successfully');
       } else {
         addFailController();
       }
